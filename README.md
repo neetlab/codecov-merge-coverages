@@ -1,1 +1,1 @@
-# codecov-merge-coverages
+# codecov-jest-and-ava

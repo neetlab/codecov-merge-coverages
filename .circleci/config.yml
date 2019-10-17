@@ -1,0 +1,59 @@
+version: 2
+jobs:
+  jest:
+    docker:
+      - image: circleci/node:10.15.3-stretch
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Run Jest
+          command: yarn run test:jest
+
+  ava:
+    docker:
+      - image: circleci/node:10.15.3-stretch
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install --frozen-lockfile
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Run Ava
+          command: yarn run test:ava
+
+      - run:
+          name: Send coverage report via nyc
+          command: yarn run coverage:ava

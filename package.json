@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "test:jest": "jest --coverage --coverageReporters=text-lcov",
+    "test:ava": "nyc ava",
+    "coverage:ava": "nyc report --reporter=text-lcov"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/test/jest/**/*.js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.js"
+    ]
+  },
+  "ava": {
+    "files": [
+      "./test/ava/**/*.js"
+    ]
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "ava": "^2.4.0",
+    "jest": "^24.9.0",
+    "nyc": "^14.1.1",
+    "codecov": "^3.6.1"
+  }
+}
