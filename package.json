@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "test:jest": "jest --coverage --coverageReporters=text-lcov",
-    "test:ava": "nyc ava",
-    "coverage:ava": "nyc report --reporter=text-lcov"
+    "test:jest": "jest --coverageReporters=lcov",
+    "test:ava": "nyc ava && nyc report --reporter=text-lcov > coverage.lcov"
   },
   "jest": {
+    "collectCoverage": true,
     "testMatch": [
       "<rootDir>/test/jest/**/*.js"
     ],

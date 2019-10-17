@@ -27,6 +27,10 @@ jobs:
           name: Run Jest
           command: yarn run test:jest
 
+      - run:
+          name: Send code coverage
+          command: yarn run codecov
+
   ava:
     docker:
       - image: circleci/node:10.15.3-stretch
@@ -51,9 +55,13 @@ jobs:
             - ~/.cache/yarn
 
       - run:
-          name: Run Ava
+          name: Run AVA
           command: yarn run test:ava
 
       - run:
           name: Send coverage report via nyc
           command: yarn run coverage:ava
+
+      - run:
+          name: Send code coverage
+          command: yarn run codecov
