@@ -1,4 +1,12 @@
 version: 2
+
+workflows:
+  version: 2
+  test_all:
+    jobs:
+      - jest
+      - ava
+
 jobs:
   jest:
     docker:
