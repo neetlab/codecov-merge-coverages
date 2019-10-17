@@ -9,7 +9,8 @@
       "<rootDir>/test/jest/**/*.js"
     ],
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.js"
+      "<rootDir>/src/**/*.js",
+      "!<rootDir>/src/bbb.js"
     ]
   },
   "ava": {
@@ -20,7 +21,7 @@
   "nyc": {
     "all": true,
     "include": [
-      "src/**/*.js"
+      "src/bbb.js"
     ]
   },
   "dependencies": {
