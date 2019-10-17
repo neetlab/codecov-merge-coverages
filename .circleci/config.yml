@@ -67,9 +67,5 @@ jobs:
           command: yarn run test:ava
 
       - run:
-          name: Send coverage report via nyc
-          command: yarn run coverage:ava
-
-      - run:
           name: Send code coverage
           command: yarn run codecov
