@@ -37,7 +37,9 @@ jobs:
 
       - run:
           name: Run Jest
-          command: yarn run test:jest
+          command: |
+            export COVERALLS_SERVICE_JOB_ID=$CIRCLE_WORKFLOW_ID
+            yarn run test:jest
 
   ava:
     docker:
@@ -64,4 +66,6 @@ jobs:
 
       - run:
           name: Run AVA
-          command: yarn run test:ava
+          command: |
+            export COVERALLS_SERVICE_JOB_ID=$CIRCLE_WORKFLOW_ID
+            yarn run test:ava
