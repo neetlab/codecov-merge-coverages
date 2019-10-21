@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test:jest": "jest --coverageReporters=lcov",
-    "test:ava": "nyc ava && nyc report --reporter=text-lcov > coverage.lcov"
+    "test:jest": "jest --coverageReporters=lcov | coveralls",
+    "test:ava": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "jest": {
     "collectCoverage": true,
@@ -26,8 +26,11 @@
   },
   "dependencies": {
     "ava": "^2.4.0",
+    "codecov": "^3.6.1",
     "jest": "^24.9.0",
-    "nyc": "^14.1.1",
-    "codecov": "^3.6.1"
+    "nyc": "^14.1.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.7"
   }
 }
