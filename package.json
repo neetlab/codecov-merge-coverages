@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test:jest": "jest --coverageReporters=text-lcov | coveralls",
+    "test:jest": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test:ava": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "jest": {
