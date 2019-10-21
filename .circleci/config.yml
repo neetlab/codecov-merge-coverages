@@ -9,7 +9,7 @@ workflows:
 
 notify:
   webhooks:
-    - url: https://coveralls.io/webhook?repo_token=VtOeZO8EN3iKRsA1cTuMMEBCWRUQvFrZfYaGT
+    - url: https://coveralls.io/webhook?repo_token=U3hWUanranuyi8MHABC6JWgL3HSOJNug2
 
 jobs:
   jest:
