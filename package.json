@@ -4,13 +4,11 @@
     "test:ava": "nyc ava && nyc report --reporter=text-lcov | coveralls"
   },
   "jest": {
-    "collectCoverage": true,
     "testMatch": [
       "<rootDir>/test/jest/**/*.js"
     ],
     "collectCoverageFrom": [
-      "<rootDir>/src/**/*.js",
-      "!<rootDir>/src/bbb.js"
+      "<rootDir>/src/aaa.js"
     ]
   },
   "ava": {
@@ -19,7 +17,6 @@
     ]
   },
   "nyc": {
-    "all": true,
     "include": [
       "src/bbb.js"
     ]
