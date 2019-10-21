@@ -7,6 +7,10 @@ workflows:
       - jest
       - ava
 
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=VtOeZO8EN3iKRsA1cTuMMEBCWRUQvFrZfYaGT
+
 jobs:
   jest:
     docker:
